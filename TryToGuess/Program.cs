@@ -126,7 +126,13 @@ namespace TryToGuess
                     minNumber = lastGuess;
                 }
                 tries++;
-                if (tries==maxTries)
+                
+                if (lastGuess == guessedNumber)
+                {
+                    Console.WriteLine("I see you! Lying is bad! I won! ;)))");
+                    break;
+                }
+                if (tries == maxTries)
                 {
                     Console.WriteLine("I have no more attempts. You won!");
                 }
@@ -138,7 +144,7 @@ namespace TryToGuess
     {
         static void Main(string[] args)
         {
-            var game = new TryToGuess(1, 100, 5, Player.Man);
+            var game = new TryToGuess(1, 100, 5, Player.Computer);
             game.Start();
 
             Console.ReadLine();
