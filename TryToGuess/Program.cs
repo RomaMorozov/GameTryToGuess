@@ -59,25 +59,33 @@ namespace TryToGuess
                 }
                 else if (lastNumber < guessedNumber && lastNumber == guessedNumber - 1)
                 {
-                    Console.WriteLine("My number greater, but very close! :)");
+                    Console.Write("My number greater, but very close! ");
                 }
                 else if (lastNumber < guessedNumber)
                 {
-                    Console.WriteLine("No, my number is greater! Try again.");
+                    Console.Write("No, my number is greater! ");
                 }
                 else if (lastNumber > guessedNumber && lastNumber == guessedNumber + 1)
                 {
-                    Console.WriteLine("My number less, but very close! :)");
+                    Console.Write("My number less, but very close! ");
                 }
                 else
                 {
-                    Console.WriteLine("No, my number is less.Try again.");
+                    Console.Write("No, my number is less. ");
                 }
 
                 tries++;
                 if (tries == maxTries)
                 {
                     Console.WriteLine("Sorry, but it was your last chance, you lost!");
+                }
+                else if (tries == maxTries - 1)
+                {
+                    Console.WriteLine("You have last chance! :)");
+                }
+                else
+                {
+                    Console.WriteLine("Try again!");
                 }
             }
         }
